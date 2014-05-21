@@ -66,6 +66,8 @@ typedef NS_ENUM(NSUInteger, SwipeViewAlignment)
 @property (nonatomic, readonly) CGSize itemSize;
 @property (nonatomic, assign) NSInteger itemsPerPage;
 @property (nonatomic, assign) BOOL truncateFinalPage;
+@property (nonatomic, assign) NSInteger itemsToPreloadForward;
+@property (nonatomic, assign) NSInteger itemsToPreloadBackward;
 @property (nonatomic, strong, readonly) NSArray *indexesForVisibleItems;
 @property (nonatomic, strong, readonly) NSArray *visibleItemViews;
 @property (nonatomic, strong, readonly) UIView *currentItemView;
@@ -121,6 +123,7 @@ typedef NS_ENUM(NSUInteger, SwipeViewAlignment)
 - (void)swipeViewDidEndScrollingAnimation:(SwipeView *)swipeView;
 - (BOOL)swipeView:(SwipeView *)swipeView shouldSelectItemAtIndex:(NSInteger)index;
 - (void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index;
+- (void)swipeView:(SwipeView *)swipeView animatingView:(UIView *)view atIndex:(NSInteger)index offset:(CGFloat)offset;
 
 @end
 
